@@ -2,7 +2,7 @@ class FormValidator {
   constructor(settings, formElement) {
     this._formEl = formElement;
     this._inputEl = settings.inputSelector;
-    this._SubmitButtonEl = this._formEl.querySelector(
+    this._submitButtonEl = this._formEl.querySelector(
       settings.submitButtonSelector
     );
     this._errorClass = settings.errorClass;
@@ -42,16 +42,16 @@ class FormValidator {
   }
 
   _disableSubmitBtn() {
-    this._SubmitButtonEl.classList.add(this._inactiveBtn);
-    this._SubmitButtonEl.disabled = true;
+    this._submitButtonEl.classList.add(this._inactiveBtn);
+    this._submitButtonEl.disabled = true;
   }
 
   _toggleButtonState() {
     if (this._hasInvalidInput()) {
       this._disableSubmitBtn();
     } else {
-      this._SubmitButtonEl.classList.remove(this._inactiveBtn);
-      this._SubmitButtonEl.disabled = false;
+      this._submitButtonEl.classList.remove(this._inactiveBtn);
+      this._submitButtonEl.disabled = false;
     }
   }
 
